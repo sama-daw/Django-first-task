@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Blog</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'blog_list' %}">Home</a> |
+        <a href="{% url 'add_blog' %}">Add Blog</a>
+    </nav>
+
+    <h1>Add New Blog</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <footer>
+        <p>Footer content here</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Published Blogs</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'blog_list' %}">Home</a> |
+        <a href="{% url 'add_blog' %}">Add Blog</a>
+    </nav>
+    
+    <h1>Published Blogs</h1>
+    <ul>
+        {% for blog in blogs %}
+            <li><strong>{{ blog.title }}</strong>: {{ blog.description }}</li>
+        {% empty %}
+            <li>No blogs published yet.</li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        <p>Footer content here</p>
+    </footer>
+</body>
+</html>
